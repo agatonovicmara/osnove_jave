@@ -162,7 +162,7 @@ public class zadatak1 {
             suma = numbers.get(23) + numbers.get(19);
             System.out.println("Suma je: " + suma);
         }
-
+        // razmisljam o nekom elegantnijem resenju...
 
     }
 }
