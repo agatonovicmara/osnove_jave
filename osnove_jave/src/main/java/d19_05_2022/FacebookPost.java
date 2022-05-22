@@ -21,5 +21,14 @@ public class FacebookPost {
         System.out.println(tekstObjave);
         System.out.println("Likes:"+ brojLajkova+ " | Shares: " + brojDeljenja);
     }
+
+    public FacebookPost() { } // defaultni konstruktor
+    public FacebookPost(String punoIme, String punoImeVlasnikaProfila,String tekstObjave){ //
+        this.punoIme=punoIme;
+        this.punoImeVlasnikaProfila=punoImeVlasnikaProfila;
+        this.tekstObjave=tekstObjave;
+    }
+
+
 }
 
