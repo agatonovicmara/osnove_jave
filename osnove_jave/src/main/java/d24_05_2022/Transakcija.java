@@ -48,14 +48,16 @@ public class Transakcija {
         }return provizija;
     }
 
-    public double izvrsiTransakciju(double visinaTransakcije){
 
-        double novoStanje= getRacunSaKogSePrenoseSredstva().getTrenutnoStanje()-
-                (visinaTransakcije+provizija(visinaTransakcije));
-
-        //novoStanje = getRacunNaKojiSePrenoseSredstva().getTrenutnoStanje() + visinaTransakcije;
-
-        return novoStanje;
+    public void izvrsiTransakciju(double visinaTransakcije) {
+        if (this.racunSaKogSePrenoseSredstva.getTrenutnoStanje() >= visinaTransakcije
+                + this.provizija(visinaTransakcije)) {
+            this.racunSaKogSePrenoseSredstva.promenaStanja(-visinaTransakcije
+                    - this.provizija(visinaTransakcije));
+            this.racunNaKojiSePrenoseSredstva.promenaStanja(visinaTransakcije);
+        } else {
+            System.out.println("Nemate dovoljno sredstava za ovu transakciju.");
+        }
     }
 
 
